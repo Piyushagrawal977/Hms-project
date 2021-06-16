@@ -60,7 +60,7 @@ public class patient extends JFrame {
 		JButton btnNewButton_1 = new JButton("Add Diagnosis Information");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new adddiagnosisinformation().setVisible(true);
+				new diagnosis().setVisible(true);
 			}
 		});
 		btnNewButton_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\add diag.png"));
@@ -71,7 +71,7 @@ public class patient extends JFrame {
 		JButton btnNewButton_2 = new JButton("Update Patient Record");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new updatepatient().setVisible(true);
+				new find().setVisible(true);
 			}
 		});
 		btnNewButton_2.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\rsz_update_details.png"));
@@ -82,7 +82,7 @@ public class patient extends JFrame {
 		JButton btnNewButton_3 = new JButton("Full History Of The Patient");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new fullpatientinformation().setVisible(true);
+				new show().setVisible(true);
 			}
 		});
 		btnNewButton_3.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\rsz_history1.png"));

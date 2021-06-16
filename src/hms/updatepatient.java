@@ -51,7 +51,10 @@ public class updatepatient extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	Connection con=null;
+	
 	public updatepatient() {
+		 con=connectionprovider.getCon();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400,150, 780, 600);
 		contentPane = new JPanel();
@@ -147,9 +150,10 @@ public class updatepatient extends JFrame {
 				int id=Integer.parseInt(textField_7.getText());
 				try
 				{
-					Connection con=connectionprovider.getCon();
-					Statement st=con.createStatement();
-					ResultSet rs=st.executeQuery("select *from patient where patientID="+id+" ");
+					
+					//Statement st=con.createStatement();
+					PreparedStatement pst=con.prepareStatement("Selecct *from patient where patientlD"+id+"");
+					ResultSet rs=pst.executeQuery();
 					if(rs.next())
 							{
 								textField.setText(rs.getString(2));

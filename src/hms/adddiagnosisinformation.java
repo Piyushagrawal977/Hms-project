@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-import project.connectionprovider;
+//import project.connectionprovider;
 
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -59,9 +59,10 @@ public class adddiagnosisinformation extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	Connection con=null;
 	public adddiagnosisinformation() {
 		
-		
+		con=connectionprovider.getCon();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 150, 780, 600);
 		contentPane = new JPanel();
@@ -77,10 +78,10 @@ public class adddiagnosisinformation extends JFrame {
 		lblNewLabel.setBounds(220, 45, 101, 31);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Patient ID doesn't Exist!");
+		final JLabel lblNewLabel_1 = new JLabel("Patient ID doesn't Exist!");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_1.setForeground(Color.RED);
-		lblNewLabel_1.setBounds(254, 99, 257, 31);
+		lblNewLabel_1.setBounds(254, 101, 257, 31);
 		contentPane.add(lblNewLabel_1);
 		
 		lblNewLabel_1.setVisible(false);
@@ -93,32 +94,30 @@ public class adddiagnosisinformation extends JFrame {
 				
 				try {
 					
-					String patientID=textField_3.getText();
-					int id=Integer.parseInt(patientID);
-					Connection con=connectionprovider.getCon();
-					PreparedStatement pst=null;
-					//Statement =con.createStatement();
-					//ResultSet =st.executeQuery("select *from patient where patientID="+id+" ");
-					pst=con.prepareStatement("select *from patient where id="+id+" ");
-					//pst.setInt(1,id);
-					ResultSet rs=pst.executeQuery();
-					
-
-					
-					//rs.next();
-					//if(rs.next()==false)
-						lblNewLabel_1.setVisible(true);
+//					String patientID=textField_3.getText();
+//					int id=Integer.parseInt(patientID);
+//					Connection con=connectionprovider.getCon();
+//					PreparedStatement pst=null;
+//					//Statement =con.createStatement();
+//					//ResultSet =st.executeQuery("select *from patient where patientID="+id+" ");
+//					pst=con.prepareStatement("select *from patient where id="+id+" ");
+//					//pst.setInt(1,id);
+//					ResultSet rs=pst.executeQuery();
+//					
+//
+//                      if(rs.next()==false)
+//						lblNewLabel_1.setVisible(true);
 //					else
 //					{
 //						lblNewLabel_1.setVisible(false);
 //						textField_3.setEditable(false);
 //						flag=1;
 //						
-//						
-//					}
-//					
-					pst.close();
-				}
+					JOptionPane.showMessageDialog(null, "Connection done");
+					}
+					
+				//	pst.close();
+			//	}
 				
 				catch(Exception e1)
 				{
@@ -149,7 +148,7 @@ public class adddiagnosisinformation extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("Symptom's");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel_2.setBounds(23, 268, 99, 40);
+		lblNewLabel_2.setBounds(23, 268, 101, 40);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Diagnosis");
@@ -163,7 +162,7 @@ public class adddiagnosisinformation extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		textField = new JTextField();
-		textField.setBounds(132, 275, 190, 32);
+		textField.setBounds(132, 275, 189, 31);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -184,14 +183,14 @@ public class adddiagnosisinformation extends JFrame {
 		
 		
 		
-		JLabel lblNewLabel_6 = new JLabel("Type of Ward");
+		final JLabel lblNewLabel_6 = new JLabel("Type of Ward");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_6.setBounds(429, 335, 127, 43);
 		contentPane.add(lblNewLabel_6);
 		
 		lblNewLabel_6.setVisible(false);
 		
-		JComboBox comboBox = new JComboBox();
+		final JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Tahoma", Font.BOLD, 15));
 		comboBox.setForeground(new Color(0, 0, 0));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"None", "General", "Duo", "Single"}));
@@ -203,7 +202,7 @@ public class adddiagnosisinformation extends JFrame {
 		
 		
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Yes");
+		final JCheckBox chckbxNewCheckBox = new JCheckBox("Yes");
 		chckbxNewCheckBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxNewCheckBox.isSelected())

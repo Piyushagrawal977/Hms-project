@@ -7,9 +7,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Window;
+
 import javax.swing.JTextPane;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -64,7 +67,7 @@ public class login {
 		lblNewLabel_1.setBounds(658, 372, 149, 60);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JTextPane id = new JTextPane();
+		final JTextPane id = new JTextPane();
 		id.setFont(new Font("Tahoma", Font.BOLD, 18));
 		id.setBounds(856, 293, 430, 47);
 		frame.getContentPane().add(id);
@@ -80,7 +83,8 @@ public class login {
 			public void actionPerformed(ActionEvent e) {
 				if(id.getText().equals("9889")&& pass.getText().equals("admin"))
 				{
-				home.main(null);			
+				home.main(null);
+				//new home().setVisible(true);
 				}
 				else
 					JOptionPane.showMessageDialog(null, "Incorrect id or Password");

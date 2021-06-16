@@ -2,14 +2,14 @@ package project;
 import java.sql.*;
 
 public class connectionprovider {
-	public static Connection getCon()throws Exception
+	public static Connection getCon()//throws Exception
 	{
 		Connection con=null;
 		try
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","123456");
+				con=DriverManager.getConnection("jdbc:mysql://localhost:3307/hms","root","");
 			return con;
 			
 			
@@ -24,8 +24,8 @@ public class connectionprovider {
 //			            con.close();
 //			        }
 //			      } catch (SQLException ex) {
-//			          System.out.println(ex.getMessage());
-//			      }
+//			          System.out.println(ex.getMessage())
+//		}
 //		}
 	}
 }

@@ -1,6 +1,6 @@
 
 package hms;
-import project.connectionprovider;
+//import project.connectionprovider;
 
 import java.sql.*;
 
@@ -10,6 +10,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import project.connectionprovider;
+
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.ImageIcon;
@@ -52,7 +55,10 @@ public class addnewpatient extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	Connection con=null;
+	
 	public addnewpatient() {
+		con=connectionprovider.getCon();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 150, 780, 600);
 		contentPane = new JPanel();
@@ -144,7 +150,7 @@ public class addnewpatient extends JFrame {
 		contentPane.add(textField_6);
 		textField_6.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
+	     JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Dialog", Font.PLAIN, 15));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"NONE", "MALE ", "FEMALE ", "OTHERS"}));
 		comboBox.setSelectedIndex(0);
@@ -156,22 +162,36 @@ public class addnewpatient extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//String patientID=textField.getText();
 				String name=textField_1.getText();
-				String contactNumber=textField_2.getText();
+				String contactno=textField_2.getText();
 				String gender=(String)comboBox.getSelectedItem();
 				String age=textField_3.getText();
-				String bloodGroup=textField_4.getText();
+				String bloodgroup=textField_4.getText();
 				String address=textField_5.getText();
-				String anyMajorDisease=textField_6.getText();
+				String anymajordisease=textField_6.getText();
 				try 
 				{
-					Connection con=connectionprovider.getCon();
+					String s="select max patientID from patient";
 					Statement st=con.createStatement();
-					ResultSet rs=st.executeQuery("select max(patientID) from patient");
-					rs.next();
-					int patientID=rs.getInt(1);
-					patientID++;
-					st.executeUpdate("insert into patient values('"+patientID+"','"+name+"','"+contactNumber+"','"+age+"','"+gender+"','"+bloodGroup+"','"+address+"','"+anyMajorDisease+"')");
-					JOptionPane.showMessageDialog(null, "Successfully Updated and Your Patient ID is "+patientID);
+					PreparedStatement pt=con.prepareStatement(s);
+					ResultSet r=pt.executeQuery();
+					int id;
+					id=r.getInt(1);
+					id++;
+				
+//					ResultSet rs=st.executeQuery("select *from patient");
+//					rs.afterLast();
+//					rs.previous();
+////					while(!rs.next())
+////					{
+////						
+////					}
+					//ResultSet rs=st.executeQuery("select max(patientID) from patient");
+//					int patientID=rs.getInt("patientID");
+//					patientID++;
+				//	int patientID;
+				//	patientID=4;
+					st.executeUpdate("insert into patient values("+id+",'"+name+"','"+contactno+"','"+age+"','"+gender+"','"+bloodgroup+"','"+address+"','"+anymajordisease+"')");
+					JOptionPane.showMessageDialog(null, "Successfully Updated and Your Patient ID is "+id);
 					setVisible(false);
 					new addnewpatient().setVisible(true);
 					

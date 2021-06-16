@@ -73,7 +73,7 @@ public class home {
 		JButton btnNewButton_2 = new JButton("HOSPITAL");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new hospital().setVisible(true);
+				new info().setVisible(true);
 			}
 		});
 		btnNewButton_2.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\rsz_hospital_information.png"));

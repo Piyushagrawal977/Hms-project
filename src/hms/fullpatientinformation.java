@@ -27,6 +27,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JLabel;
+import java.awt.Color;
+import javax.swing.JScrollPane;
 
 public class fullpatientinformation extends JFrame {
 
@@ -48,11 +50,18 @@ public class fullpatientinformation extends JFrame {
 			}
 		});
 	}
+	//PreparedStatement pst=null;
+	//Connection con= null;
+	
+	private JScrollPane scrollPane;
 
 	/**
 	 * Create the frame.
+	 * @throws Exception 
 	 */
-	public fullpatientinformation() {
+	public fullpatientinformation()  {
+		
+		Connection con=connectionprovider.getCon();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(400, 150, 780, 600);
 		contentPane = new JPanel();
@@ -60,23 +69,24 @@ public class fullpatientinformation extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		scrollPane = new JScrollPane();
+		scrollPane.addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentShown(ComponentEvent e) {
+				
+				
+			}
+		});
+		scrollPane.setBounds(10, 24, 746, 457);
+		contentPane.add(scrollPane);
+		
 		table = new JTable();
+		scrollPane.setViewportView(table);
+		table.setBackground(Color.WHITE);
 		table.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentShown(ComponentEvent e) {
-				try {
-					Connection con=connectionprovider.getCon();
-					java.sql.Statement st=con.createStatement();
-					ResultSet rs=st.executeQuery("select *from patient inner join patientreport where patient.patientID");
-					table.setAutoResizeMode(table.AUTO_RESIZE_OFF);
-					table.setModel(DbUtils.resultSetToTableModel(rs));
-					
-					
-				}
-				catch(Exception e1)
-				{
-					JOptionPane.showMessageDialog(null,"Connection Error");
-				}
+				
 			}
 		});
 		table.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -86,8 +96,6 @@ public class fullpatientinformation extends JFrame {
 			new String[] {
 			}
 		));
-		table.setBounds(10, 24, 746, 457);
-		contentPane.add(table);
 		
 		JButton btnNewButton = new JButton("Close");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -100,9 +108,30 @@ public class fullpatientinformation extends JFrame {
 		btnNewButton.setBounds(596, 517, 127, 36);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\download4 780x600.jpg"));
-		lblNewLabel.setBounds(0, 0, 766, 563);
-		contentPane.add(lblNewLabel);
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					
+					java.sql.Statement st=con.createStatement();
+					PreparedStatement pst=con.prepareStatement("select *from pateint");
+				//	ResultSet rs=st.executeQuery("select *from patient inner join patientreport where patient.patientID");
+					ResultSet rs=null;
+					rs =pst.executeQuery();
+					table.setAutoResizeMode(table.AUTO_RESIZE_OFF);
+					table.setModel(DbUtils.resultSetToTableModel(rs));
+					JOptionPane.showMessageDialog(null,"done");
+					
+					
+				}
+				catch(Exception e1)
+				{ 
+					
+					JOptionPane.showMessageDialog(null,"Connection Error");
+				}
+			}
+		});
+		btnNewButton_1.setBounds(58, 517, 112, 31);
+		contentPane.add(btnNewButton_1);
 	}
 }
