@@ -70,6 +70,7 @@ public class diagnosis extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	private JLabel lblNewLabel_6;
 	//private JComboBox comboBox ;
 	public diagnosis() {
 		
@@ -84,7 +85,7 @@ public class diagnosis extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		JLabel lblNewLabel = new JLabel("Patient ID Doesn't Exist");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setBounds(231, 88, 240, 32);
 		contentPane.add(lblNewLabel);
@@ -97,8 +98,8 @@ public class diagnosis extends JFrame {
 		
 		
 		JLabel lblNewLabel_5 = new JLabel("Type of Ward");
-		lblNewLabel_5.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lblNewLabel_5.setBounds(441, 312, 117, 32);
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel_5.setBounds(440, 310, 141, 32);
 		contentPane.add(lblNewLabel_5);
 		
 		JComboBox comboBox = new JComboBox();
@@ -113,6 +114,7 @@ public class diagnosis extends JFrame {
 		
 		
 		JButton btnNewButton = new JButton("search");
+		btnNewButton.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\search.png"));
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -166,17 +168,17 @@ public class diagnosis extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		lblNewLabel_1 = new JLabel("Symptom's");
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_1.setBounds(24, 226, 141, 32);
 		contentPane.add(lblNewLabel_1);
 		
 		lblNewLabel_2 = new JLabel("Diagnosis");
-		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_2.setBounds(24, 312, 141, 32);
 		contentPane.add(lblNewLabel_2);
 		
 		lblNewLabel_3 = new JLabel("Medicines\r\n");
-		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_3.setBounds(24, 405, 141, 32);
 		contentPane.add(lblNewLabel_3);
 		
@@ -202,7 +204,7 @@ public class diagnosis extends JFrame {
 		textField_3.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("Ward Required\r\n");
-		lblNewLabel_4.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_4.setBounds(441, 223, 141, 39);
 		contentPane.add(lblNewLabel_4);
 		
@@ -227,6 +229,7 @@ public class diagnosis extends JFrame {
 		});
 		
 	    JButton btnNewButton_1 = new JButton("Save");
+	    btnNewButton_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\save-icon--1.png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(k==1)
@@ -272,6 +275,7 @@ public class diagnosis extends JFrame {
 		
 		
 		JButton btnNewButton_2 = new JButton("Close");
+		btnNewButton_2.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\Close.png"));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -280,6 +284,12 @@ public class diagnosis extends JFrame {
 		btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		btnNewButton_2.setBounds(619, 514, 123, 39);
 		contentPane.add(btnNewButton_2);
+		
+		lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel_6.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\780X600 REC F.png"));
+		lblNewLabel_6.setBounds(-25, 0, 791, 601);
+		contentPane.add(lblNewLabel_6);
 		
 	
 	}

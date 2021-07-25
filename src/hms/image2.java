@@ -44,27 +44,29 @@ public class image2 extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\right arrow2 70x70.png"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new image3().setVisible(true);
-				new image2().setVisible(false);
+				setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(724, 212, 42, 121);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\left arrow 70x70.png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
 				new image1().setVisible(true);
-				new image2().setVisible(false);
 			}
 		});
 		btnNewButton_1.setBounds(0, 212, 42, 121);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\hospital\\ante-samarzija-F7m3QZJ_4mg-unsplash 245x309.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\unnamed (1).png"));
 		lblNewLabel.setBounds(52, 10, 246, 310);
 		contentPane.add(lblNewLabel);
 		
@@ -86,12 +88,17 @@ public class image2 extends JFrame {
 		JButton btnNewButton_2 = new JButton("Close");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new image2().setVisible(false);
+				setVisible(false);
 			}
 		});
 		btnNewButton_2.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\Close.png"));
 		btnNewButton_2.setBounds(579, 521, 124, 32);
 		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\780X600 REC F.png"));
+		lblNewLabel_3.setBounds(-26, 0, 792, 563);
+		contentPane.add(lblNewLabel_3);
 	}
 
 }

@@ -65,6 +65,7 @@ public class home {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 19));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				new doctor().setVisible(true);
 			}
 		});
 		btnNewButton_1.setBounds(21, 297, 267, 56);
@@ -99,9 +100,13 @@ public class home {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setAlignmentY(Component.TOP_ALIGNMENT);
-		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\sharda hospital 1600X840.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\main without bue.png"));
 		lblNewLabel.setBounds(0, 0, 1526, 783);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel label = new JLabel("New label");
+		label.setBounds(467, 594, 45, 13);
+		frame.getContentPane().add(label);
 	}
 
 }

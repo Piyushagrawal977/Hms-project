@@ -68,6 +68,7 @@ public class show extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton = new JButton("Load");
+		btnNewButton.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\load 50x50.png"));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -86,6 +87,7 @@ public class show extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_1 = new JButton("close");
+		btnNewButton_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\Close.png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -96,8 +98,8 @@ public class show extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\50-Beautiful-780x600.jpg"));
-		lblNewLabel.setBounds(0, 0, 766, 563);
+		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\780X600 REC F.png"));
+		lblNewLabel.setBounds(-35, 0, 801, 563);
 		contentPane.add(lblNewLabel);
 	}
 }

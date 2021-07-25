@@ -22,11 +22,11 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class find extends JFrame {
 
 	public int flag=0;
-	private JPanel contentPane;
 	private JTextField textField;
 
 	/**
@@ -67,6 +67,7 @@ public class find extends JFrame {
 	private JLabel lblAddress;
 	private JLabel lblAnyMajorDisease;
 	private JLabel lblPatientI;
+	private JPanel contentPane;
 	public find() {
 		con=connectionprovider.getCon();
 		//st=con.createStatement();
@@ -84,6 +85,7 @@ public class find extends JFrame {
 		textField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Search");
+		btnNewButton.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\search.png"));
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -162,6 +164,7 @@ public class find extends JFrame {
 		textField_7.setColumns(10);
 		
 		btnNewButton_1 = new JButton("UPDATE");
+		btnNewButton_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\save-icon--1.png"));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			   int  patientID=Integer.parseInt(textField.getText());
@@ -196,6 +199,7 @@ public class find extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		btnNewButton_2 = new JButton("CLOSE");
+		btnNewButton_2.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\Close.png"));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -244,5 +248,10 @@ public class find extends JFrame {
 		lblPatientI.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		lblPatientI.setBounds(84, 27, 136, 32);
 		contentPane.add(lblPatientI);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\780X600 REC F.png"));
+		lblNewLabel_1.setBounds(-39, 0, 847, 563);
+		contentPane.add(lblNewLabel_1);
 	}
 }

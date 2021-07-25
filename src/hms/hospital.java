@@ -70,5 +70,10 @@ public class hospital extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setBounds(577, 519, 140, 32);
 		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\780X600 REC F.png"));
+		lblNewLabel_1.setBounds(-25, 0, 803, 563);
+		contentPane.add(lblNewLabel_1);
 	}
 }

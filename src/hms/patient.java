@@ -54,7 +54,7 @@ public class patient extends JFrame {
 		});
 		btnNewButton.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\add new patient.png"));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton.setBounds(25, 103, 334, 75);
+		btnNewButton.setBounds(25, 160, 334, 75);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Add Diagnosis Information");
@@ -65,7 +65,7 @@ public class patient extends JFrame {
 		});
 		btnNewButton_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\add diag.png"));
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton_1.setBounds(25, 235, 334, 75);
+		btnNewButton_1.setBounds(25, 280, 334, 75);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Update Patient Record");
@@ -76,7 +76,7 @@ public class patient extends JFrame {
 		});
 		btnNewButton_2.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\rsz_update_details.png"));
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton_2.setBounds(25, 367, 334, 75);
+		btnNewButton_2.setBounds(25, 416, 334, 75);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Full History Of The Patient");
@@ -87,7 +87,7 @@ public class patient extends JFrame {
 		});
 		btnNewButton_3.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\rsz_history1.png"));
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton_3.setBounds(25, 499, 334, 75);
+		btnNewButton_3.setBounds(25, 543, 334, 75);
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Main Menu");
@@ -99,12 +99,12 @@ public class patient extends JFrame {
 		});
 		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton_4.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\exit.png"));
-		btnNewButton_4.setBounds(25, 631, 334, 75);
+		btnNewButton_4.setBounds(25, 669, 334, 75);
 		contentPane.add(btnNewButton_4);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\sharda hospital 1600X840.jpg"));
-		lblNewLabel.setBounds(0, 0, 1537, 804);
+		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\main without bue.png"));
+		lblNewLabel.setBounds(10, 10, 1537, 804);
 		contentPane.add(lblNewLabel);
 	}
 }

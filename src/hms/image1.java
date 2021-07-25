@@ -46,7 +46,7 @@ public class image1 extends JFrame {
 		JButton btnNewButton_1 = new JButton("Close");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new image1().setVisible(false);
+				setVisible(false);
 			}
 			
 		});
@@ -54,15 +54,6 @@ public class image1 extends JFrame {
 		btnNewButton_1.setBounds(556, 523, 119, 30);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new image2().setVisible(true);
-				new image1().setVisible(false);
-			}
-		});
-		btnNewButton.setBounds(702, 202, 43, 130);
-		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\hospital\\GsBMpQpS_303x237.jpg"));
@@ -70,14 +61,31 @@ public class image1 extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\hospital\\6fe5fcc6-cd25-491d-8f65-5770ec37b281BANNER.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\620X256.png"));
 		lblNewLabel_1.setBounds(59, 257, 620, 256);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\hospital\\national-cancer-institute-701-FJcjLAQ-unspla 303x237.jpg"));
+		lblNewLabel_2.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\303X237.png"));
 		lblNewLabel_2.setBounds(372, 10, 303, 237);
 		contentPane.add(lblNewLabel_2);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\right arrow2 70x70.png"));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				new image2().setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(702, 202, 43, 130);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\780X600 REC F.png"));
+		lblNewLabel_3.setBounds(-32, 0, 798, 578);
+		contentPane.add(lblNewLabel_3);
+	
 		
 		
 	}

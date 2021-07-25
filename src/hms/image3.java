@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class image3 extends JFrame {
 
@@ -44,17 +45,18 @@ public class image3 extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\left arrow 70x70.png"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new image2().setVisible(true);
-				new image3().setVisible(false);
+				setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(10, 218, 40, 120);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\madical-banner_1_696x220.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\696x220.png"));
 		lblNewLabel.setBounds(60, 29, 696, 220);
 		contentPane.add(lblNewLabel);
 		
@@ -69,14 +71,20 @@ public class image3 extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnNewButton_1 = new JButton("Close");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new image3().setVisible(false);
+				setVisible(false);
 			}
 		});
 		btnNewButton_1.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\HMS ICON\\Close.png"));
 		btnNewButton_1.setBounds(576, 517, 126, 36);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\780X600 REC F.png"));
+		lblNewLabel_3.setBounds(-23, 0, 800, 563);
+		contentPane.add(lblNewLabel_3);
 	}
 
 }

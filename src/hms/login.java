@@ -59,22 +59,22 @@ public class login {
 		lblNewLabel.setBackground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 19));
 		lblNewLabel.setToolTipText("");
-		lblNewLabel.setBounds(660, 280, 138, 71);
+		lblNewLabel.setBounds(583, 280, 138, 71);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("PASSWORD");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 19));
-		lblNewLabel_1.setBounds(658, 372, 149, 60);
+		lblNewLabel_1.setBounds(583, 372, 149, 60);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		final JTextPane id = new JTextPane();
 		id.setFont(new Font("Tahoma", Font.BOLD, 18));
-		id.setBounds(856, 293, 430, 47);
+		id.setBounds(767, 290, 430, 47);
 		frame.getContentPane().add(id);
 		
 		pass = new JPasswordField();
 		pass.setFont(new Font("Tahoma", Font.BOLD, 16));
-		pass.setBounds(856, 381, 430, 47);
+		pass.setBounds(767, 381, 430, 47);
 		frame.getContentPane().add(pass);
 		
 		JButton btnNewButton = new JButton("LOGIN");
@@ -94,7 +94,7 @@ public class login {
 			
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton.setBounds(856, 467, 155, 47);
+		btnNewButton.setBounds(808, 467, 155, 47);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("CLOSE");
@@ -107,13 +107,13 @@ public class login {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton_1.setBounds(1112, 467, 132, 47);
+		btnNewButton_1.setBounds(1034, 467, 132, 47);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JLabel background = new JLabel("");
 		background.setBackground(new Color(51, 102, 255));
 		background.setForeground(new Color(102, 153, 102));
-		background.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\sharda hospital 1540X830.png"));
+		background.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\hms main.png"));
 		background.setBounds(0, 0, 1526, 793);
 		frame.getContentPane().add(background);
 	}

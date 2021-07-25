@@ -80,7 +80,7 @@ public class addnewpatient extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("Name");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_1.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		lblNewLabel_1.setBounds(182, 41, 106, 38);
 		contentPane.add(lblNewLabel_1);
 		
@@ -168,13 +168,14 @@ public class addnewpatient extends JFrame {
 				String bloodgroup=textField_4.getText();
 				String address=textField_5.getText();
 				String anymajordisease=textField_6.getText();
+				int id;
 				try 
 				{
-					String s="select max patientID from patient";
+					String s="select max(patientID) as id from patient";
 					Statement st=con.createStatement();
 					PreparedStatement pt=con.prepareStatement(s);
 					ResultSet r=pt.executeQuery();
-					int id;
+					r.next();
 					id=r.getInt(1);
 					id++;
 				
@@ -190,7 +191,7 @@ public class addnewpatient extends JFrame {
 //					patientID++;
 				//	int patientID;
 				//	patientID=4;
-					st.executeUpdate("insert into patient values("+id+",'"+name+"','"+contactno+"','"+age+"','"+gender+"','"+bloodgroup+"','"+address+"','"+anymajordisease+"')");
+					st.executeUpdate("insert into patient values('"+id+"','"+name+"','"+contactno+"','"+age+"','"+gender+"','"+bloodgroup+"','"+address+"','"+anymajordisease+"')");
 					JOptionPane.showMessageDialog(null, "Successfully Updated and Your Patient ID is "+id);
 					setVisible(false);
 					new addnewpatient().setVisible(true);
@@ -210,8 +211,8 @@ public class addnewpatient extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_8 = new JLabel("New label");
-		lblNewLabel_8.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\download4 780x600.jpg"));
-		lblNewLabel_8.setBounds(0, 0, 766, 563);
+		lblNewLabel_8.setIcon(new ImageIcon("D:\\piyush\\CSE\\image\\780X600 REC F.png"));
+		lblNewLabel_8.setBounds(-18, 0, 815, 563);
 		contentPane.add(lblNewLabel_8);
 	}
 }
